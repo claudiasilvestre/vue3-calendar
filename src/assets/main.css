@@ -1,0 +1,280 @@
+body {
+  font-family: 'Segoe UI';
+  font-size: 15px;
+}
+
+/* Calendar */
+.calendar-holidays {
+  display: flex;
+  align-items: start;
+}
+
+.wrapper-calendar {
+  width: 50%;
+  display: flex;
+  justify-content: start;
+}
+
+.wrapper {
+  width: 450px;
+  background: #e3e3e3;
+  border-radius: 10px;
+}
+
+.wrapper-header {
+  display: flex;
+  align-items: center;
+  padding: 25px 30px 10px;
+  justify-content: space-between;
+}
+
+.current-date {
+  font-size: 1.45rem;
+  font-weight: 500;
+}
+
+.icons span {
+  height: 38px;
+  width: 38px;
+  color: #878787;
+  font-size: 1.9rem;
+  margin: 0 1px;
+  cursor: pointer;
+  text-align: center;
+  line-height: 38px;
+  border-radius: 50%;
+}
+
+.icons span:hover {
+  background: #f2f2f2;
+}
+
+.icons span:last-child {
+  margin-right: -10px;
+}
+
+.calendar {
+  padding: 20px;
+}
+
+.calendar ul {
+  display: flex;
+  list-style: none;
+  flex-wrap: wrap;
+  text-align: center;
+  padding: 0;
+}
+
+.calendar .days {
+  margin-bottom: 20px;
+}
+
+.calendar .weeks li {
+  font-weight: 500;
+  font-weight: bold;
+}
+
+.calendar ul li {
+  position: relative;
+  width: calc(100% / 7);
+}
+
+.calendar .days li {
+  z-index: 1;
+  cursor: pointer;
+  margin-top: 30px;
+}
+
+.days li.inactive {
+  color: #aaa;
+}
+
+.days li.holidays {
+  color: #ff0000;
+}
+
+.days li.active {
+  color: #fff;
+}
+
+.calendar ul li::before {
+  position: absolute;
+  content: "";
+  height: 40px;
+  width: 40px;
+  top: 50%;
+  left: 50%;
+  z-index: -1;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.days li:hover::before {
+  background: #f2f2f2;
+}
+
+.days li.active::before {
+  background: #77cbea;
+}
+
+.holidays {
+  width: 50%;
+}
+
+.holidays h3 {
+  font-size: 1.45rem;
+}
+
+.holidays ul {
+  list-style: none;
+  padding: 0;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.list-item {
+  padding-bottom: 10px;
+}
+/* End calendar */
+
+/* Modal */
+.modal-mask {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.6);
+  display: grid;
+  place-items: center;
+  z-index: 3;
+}
+
+.modal-container {
+  background: white;
+  padding: 1rem;
+  width: 80vw;
+  max-width: 300px;
+  border-radius: 7px;
+}
+
+.modal-close {
+  display: flex;
+  justify-content: end;
+}
+
+.modal-container span {
+  cursor: pointer;
+}
+/* End modal */
+
+/* Sidebar menu */
+.btn {
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  height: 45px;
+  width: 45px;
+  text-align: center;
+  cursor: pointer;
+  transition: left 0.4s ease;
+}
+
+.btnClick {
+  left: 290px;
+}
+
+.btn span {
+  color: black;
+  font-size: 28px;
+  line-height: 45px;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  padding-top: 20px;
+  width: 250px;
+  left: -250px;
+  height: 100%;
+  background: #707070;
+  color: #fff;
+  z-index: 2;
+  transition: left 0.4s ease;
+}
+
+.sidebarShow {
+  left: 0px;
+  padding-left: 20px;
+}
+
+.sidebarContent {
+  margin-top: 50px;
+  margin-left: 25%;
+}
+
+.pb-30 {
+  padding-bottom: 30px;
+}
+
+.mb-10 {
+  margin-bottom: 10px;
+}
+
+.errBtn {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #fff;
+  text-decoration: none;
+  color: black;
+  border-radius: 5px;
+}
+
+.flex-space-between {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.sidebarEnd {
+  padding-bottom: 40px;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-photo {
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.flex-align-center {
+  display: flex;
+  align-items: center;
+}
+/* End sidebar menu */
+
+@media (max-width: 1250px) {
+  .calendar-holidays {
+    flex-direction: column;
+  }
+
+  .wrapper-calendar {
+    width: 100%;
+  }
+
+  .holidays {
+    width: 100%;
+  }
+}
+
+@media (max-width: 650px) {
+  .sidebarContent {
+    margin-left: 0;
+  }
+}
